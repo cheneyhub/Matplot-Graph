@@ -1,0 +1,18 @@
+# Part I Draw the pie graph
+import numpy as np
+import matplotlib.pyplot as plt
+
+data = {'Apple':26, 'Mango':17,
+        'Pineapple':21, 'Banala':29,
+        'Strawberry':11, 'Kiwi':13,
+        }
+
+colors = ['orange', 'lightgreen','lightblue', 'gold', 'cyan', 'gray']
+#Set whether the pie is outstanding
+explode = (0,0,0.3,0,0,0)
+
+plt.pie(data.values(), explode=explode, labels=data.keys(),colors=colors,
+        autopct='%1.1f%%', shadow=False, startangle=90)
+plt.axis('equal')
+plt.show()
+
