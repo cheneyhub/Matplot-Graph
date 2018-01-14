@@ -1,0 +1,22 @@
+# Part I Draw 3D scatter graph
+import numpy as np
+import matplotlib.pyplot as plt
+from mpl_toolkits.mplot3d import Axes3D
+
+fig = plt.figure()
+ax = fig.add_subplot(111, projection='3d')
+n = 250
+
+#Define a lambda function to get the 3D axis data
+f = lambda minval, maxval, n: minval + (maxval - minval) + np.random.rand(n)
+
+x_val = f(10,30,n)
+y_val= f(-20,60,n)
+z_val = f(-30,-30,n)
+
+ax.scatter(x_val, y_val, z_val, c='b', marker='o')
+ax.set_xlabel("X axis")
+ax.set_ylabel("Y axis")
+ax.set_zlabel("Z axis")
+plt.show()
+
